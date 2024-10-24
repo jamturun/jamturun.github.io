@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin-bottom: 10px;
+}
+
+.divide {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    line-height: 25px;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* HEADER */
+.header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header img.logo{
+    width: 300px;
+    height: 100%;
+}
+
+.header .menu {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .menu li {
+    list-style-type: none;
+}
+
+.header .menu a {    
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+.header .menu a:hover {
+    padding-bottom: 10px;
+    border-bottom: 4px solid black;
+}
+
+/* MAIN */
+/* LEFT */
+.main {
+    padding-top: 130px;
+}
+
+.main p, 
+.main li{
+    font-size: 1.1em;
+}
+
+.main h2 {
+    margin: 15px 0;
+}
+
+.main .left{
+    padding: 5px 25px;
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(207, 202, 202); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.main .left img.portrait {
+    width: 70%;
+}
+
+/* RIGHT */
+.main .right {
+    padding: 25px 50px;
+    border-top: 10px solid rgb(207, 202, 202);
+}
+
+.main .right div {
+    display: none;
+}
+
+/* TARGET MENU ITEM */
+.main .right div:target {
+    display: block;
+}
+
+/* RESPONSIVENESS */
+@media only screen and (max-width: 900px){
+    .main p, 
+    .main li {
+        font-size: 20px;
+    }
+
+    .divide {
+        display: initial;
+    }
+    
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 70px;
+    }
+
+    .header img.logo {
+        flex-basis: 100%;
+    }
+
+    .header .menu a {
+        font-size: .9em;
+        text-transform: capitalize;
+        margin: 0 5px;
+    }
+    
+    .header .menu a:hover {
+        padding-bottom: 3px;
+        border-bottom: 3px solid black;
+    }
+
+    .main .left{
+        padding-top: 100px;
+        overflow: hidden;
+        height: 100%;
+    }
+    .main .left img.portrait {
+        width: 40%;
+        float: right;
+        margin-left: 25px;
+    }
+    
+}
+
+/*------ HTML PAGE ID starts here ------*/
+#papers, #teaching, #talks, #conferences, #contact {
+    scroll-margin-block-start: 120px;
+    /*Adds margin to the top of the viewport*/
+    scroll-margin-block-end: 120px;
+    /*Adds margin to the bottom of the viewport*/
+}
